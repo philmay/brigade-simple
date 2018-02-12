@@ -2,6 +2,7 @@
 
 // This file is for testing GitHub fetch and execute of
 // non-containerized code.
+var events = require("brigadier").events;
 
 events.on('exec', (event, project) => {
 	console.log('==> exec event');
