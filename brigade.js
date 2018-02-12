@@ -19,7 +19,7 @@ events.on('exec', (event, project) => {
 	// my own GitHub repo.
 	//
 	var nodeJob = new Job('barenode', 'node:8');
-	nodeJob.tasks = [ "pwd", "ls -a", "node log-stuff.js" ];
+	nodeJob.tasks = [ "ls -a", "cd /src", "ls -a", "node log-stuff.js" ];
 	console.log(JSON.stringify(nodeJob, null, 2));
 
 	// Run the non-container node job
