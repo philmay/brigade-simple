@@ -19,12 +19,12 @@ events.on('exec', (event, project) => {
 	// my own GitHub repo.
 	//
 	var nodeJob = new Job('barenode', 'node:8');
-	nodeJob.tasks = [ "ls -a", "cd /src", "ls -a", "node log-stuff.js" ];
+	nodeJob.tasks = [ "echo '>>> root dir'", "ls -a", "cd /src", "echo '>>> src dir'", "ls -a", "node log-stuff.js" ];
 	console.log(JSON.stringify(nodeJob, null, 2));
 
 	// Run the non-container node job
 	nodeJob.run().then( (result) => {
-		console.log('Finished barenode job - ' + result);
+		console.log('Finished barenode job - \n' + result);
 	}).catch( (err) => {
 		console.log('Error running barenode job - ' + JSON.stringify(err, null, 2));
 	});
