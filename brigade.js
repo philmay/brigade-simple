@@ -26,4 +26,4 @@ events.on('exec', (event, project) => {
 		console.log('Error running barenode job - ' + JSON.stringify(err, null, 2));
 	});
 
-);
+});
